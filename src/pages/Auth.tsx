@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { TrendingUp, Moon, Sun } from "lucide-react";
 import { z } from "zod";
 import { checkSupabaseConfig } from "@/utils/supabaseCheck";
+import stocklensLogo from "@/assets/stocklensLOGO.png";
 
 // Google Icon SVG Component
 const GoogleIcon = () => (
@@ -75,21 +76,23 @@ const Auth = () => {
     const testConnection = async () => {
       const { testSupabaseConnection } = await import('@/utils/supabaseCheck');
       const result = await testSupabaseConnection();
+      const res = result as any; // Cast to any to handle union type properties safely
 
       // Only show warning if it's a real issue (not skipped or Netlify CORS)
-      if (!result.connected && !result.skipped && !result.isNetlifyIssue) {
-        if (result.isPaused) {
-          console.warn('⚠️ Supabase connection test failed - Project might be paused:', result);
+      if (!res.connected && !res.skipped && !res.isNetlifyIssue) {
+        // Handle explicit errors (like missing env vars)
+        if (res.error) {
+          console.warn('⚠️ Supabase connection test failed:', res);
           toast({
             title: "Supabase Connection Issue",
-            description: result.suggestion || "Your Supabase project might be paused. Check the dashboard.",
+            description: res.error,
             variant: "destructive",
             duration: 10000,
           });
         }
-      } else if (result.isNetlifyIssue) {
+      } else if (res.isNetlifyIssue) {
         // Netlify-specific issue - only log to console, don't show to user
-        console.warn('⚠️ Netlify connection issue detected (console only):', result);
+        console.warn('⚠️ Netlify connection issue detected (console only):', res);
         // Don't show toast to user - these are usually false positives
       }
     };
@@ -624,7 +627,7 @@ const Auth = () => {
         <CardHeader className="space-y-6 text-center pb-8">
           <div className="flex flex-col items-center justify-center gap-3">
             <div className="p-2">
-              <img src="/src/assets/stocklensLOGO.png" alt="StockLens Logo" className="h-24 w-auto" />
+              <img src={stocklensLogo} alt="StockLens Logo" className="h-24 w-auto" />
             </div>
             <div className="space-y-1">
               <h1 className="text-3xl font-heading font-bold tracking-tight bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-transparent">
