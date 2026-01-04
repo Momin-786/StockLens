@@ -82,9 +82,7 @@ export const Navbar = () => {
               <SheetContent side="left" className="w-[300px] sm:w-[400px]">
                 <SheetHeader>
                   <SheetTitle className="flex items-center gap-2">
-                    <div className="p-1.5 rounded-lg bg-secondary/10">
-                      <TrendingUp className="h-5 w-5 text-secondary" />
-                    </div>
+                    <img src="/src/assets/stocklensLOGO.png" alt="StockLens Logo" className="h-10 w-auto" />
                     <span className="font-heading font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
                       StockLens
                     </span>
@@ -153,9 +151,7 @@ export const Navbar = () => {
           </div>
 
           <Link to={user ? "/stocks" : "/"} className="flex items-center gap-2 hover-scale group">
-            <div className="p-1.5 rounded-lg bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
-              <TrendingUp className="h-5 w-5 text-secondary" />
-            </div>
+            <img src="/src/assets/stocklensLOGO.png" alt="StockLens Logo" className="h-10 w-auto" />
             <span className="text-xl font-heading font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
               StockLens
             </span>

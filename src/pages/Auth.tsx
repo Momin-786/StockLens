@@ -623,8 +623,8 @@ const Auth = () => {
       <Card className="w-full max-w-lg relative z-10 border-border/50 bg-card/60 backdrop-blur-xl shadow-2xl animate-in fade-in zoom-in-95 duration-500">
         <CardHeader className="space-y-6 text-center pb-8">
           <div className="flex flex-col items-center justify-center gap-3">
-            <div className="p-3 rounded-2xl bg-primary/10 ring-1 ring-primary/20">
-              <TrendingUp className="h-10 w-10 text-primary" />
+            <div className="p-2">
+              <img src="/src/assets/stocklensLOGO.png" alt="StockLens Logo" className="h-24 w-auto" />
             </div>
             <div className="space-y-1">
               <h1 className="text-3xl font-heading font-bold tracking-tight bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-transparent">

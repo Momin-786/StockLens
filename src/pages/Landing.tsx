@@ -128,9 +128,7 @@ export default function Landing() {
       >
         <nav className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link to="/" className="flex items-center gap-2 hover-scale group">
-            <div className="p-1.5 rounded-lg bg-secondary/10 group-hover:bg-secondary/20 transition-all duration-300">
-              <TrendingUp className="h-5 w-5 text-secondary" />
-            </div>
+            <img src="/src/assets/stocklensLOGO.png" alt="StockLens Logo" className="h-10 w-auto" />
             <span className="text-xl font-heading font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
               StockLens
             </span>
@@ -554,9 +552,7 @@ export default function Landing() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="p-1.5 rounded-lg bg-secondary/10">
-                  <TrendingUp className="h-5 w-5 text-secondary" />
-                </div>
+                <img src="/src/assets/stocklensLOGO.png" alt="StockLens Logo" className="h-10 w-auto" />
                 <span className="text-xl font-heading font-bold">StockLens</span>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
