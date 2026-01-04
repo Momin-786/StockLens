@@ -623,6 +623,28 @@ const Auth = () => {
         )}
       </Button>
 
+      {/* Back to Home Link */}
+      <a
+        href="/"
+        className="absolute top-4 left-4 z-50 flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors hover-scale"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-4 w-4"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+        Back to Home
+      </a>
+
       <Card className="w-full max-w-lg relative z-10 border-border/50 bg-card/60 backdrop-blur-xl shadow-2xl animate-in fade-in zoom-in-95 duration-500">
         <CardHeader className="space-y-6 text-center pb-8">
           <div className="flex flex-col items-center justify-center gap-3">
