@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
@@ -250,16 +255,30 @@ export default function Landing() {
                   <div className="absolute inset-0 bg-gradient-to-r from-secondary/0 via-white/10 to-secondary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                 </Button>
               </Link>
-              <Link to="/stocks" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 border-2 hover:bg-secondary/10 hover:border-secondary dark:hover:bg-secondary/20 dark:hover:text-secondary transition-all group"
-                >
-                  <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  View Live Stocks
-                </Button>
-              </Link>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 border-2 hover:bg-secondary/10 hover:border-secondary dark:hover:bg-secondary/20 dark:hover:text-secondary transition-all group"
+                  >
+                    <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    Watch Intro
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-4xl p-0 overflow-hidden bg-black border-none">
+                  <div className="aspect-video w-full">
+                    <video
+                      className="w-full h-full object-cover"
+                      controls
+                      autoPlay
+                      src="/intro.mp4"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
 
             {/* Stats Row with Counter Animation */}
