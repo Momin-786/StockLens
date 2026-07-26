@@ -42,7 +42,7 @@
 
 ## 🧠 About
 
-**StockLens** is a web-based **Human–Computer Interaction (HCI)** project that helps users analyze and understand the stock market through a **simple, interactive, and visually guided interface**.  
+**StockLens** is a web based project that helps users analyze and understand the stock market through a **simple, interactive, and visually guided interface**.  
 It combines **AI-powered analysis**, **real-time stock data**, and **HCI design principles** to provide users with predictions for **buying, holding, or selling** stocks.
 
 This application is **not for real trading**, but rather a **mock analytical platform** for educational and decision-support purposes.
